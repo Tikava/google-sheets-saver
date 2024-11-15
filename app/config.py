@@ -1,4 +1,7 @@
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 sheet_link = os.getenv("SHEET_LINK")
 

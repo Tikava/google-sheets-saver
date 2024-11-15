@@ -134,10 +134,12 @@ async def echo(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 def main():
     """Initializes and runs the Telegram bot."""
-    app = ApplicationBuilder().token(token=config.token).build()
+    print("Starting bot...")
+    app = ApplicationBuilder().token(config.token).build()
     echo_handler = MessageHandler((filters.TEXT | filters.PHOTO) & (~filters.COMMAND), echo)
     app.add_handler(echo_handler)
     app.run_polling()
+    print("Bot stopped.")
 
 
 if __name__ == "__main__":
